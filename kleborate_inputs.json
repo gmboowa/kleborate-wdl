@@ -1,0 +1,4 @@
+{
+  "run_kleborate.fasta_file": "this.assembly_fasta",
+  "run_kleborate.basename": "this.sample_id"
+}
