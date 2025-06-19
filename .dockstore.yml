@@ -5,5 +5,8 @@ workflows:
     primaryDescriptorPath: /kleborate.wdl
     testParameterFiles:
       - /kleborate.inputs.json
-    description: "WDL for modular Kleborate analysis of Klebsiella pneumoniae genome assemblies"
+    description: "WDL for modular Kleborate analysis of *Klebsiella pneumoniae* genome assemblies"
+    authors:
+      - Gerald Mboowa <gmboowa@gmail.com>
+
 
