@@ -91,8 +91,8 @@ myebenn/kleborate:3.2.1
 
 ## References
 
-- [Kleborate GitHub](https://github.com/katholt/Kleborate)
-- Kleborate paper (https://www.nature.com/articles/s41467-021-24448-3)
+- [Kleborate GitHub](https://github.com/katholt/Kleborate)  
+- [Kleborate paper](https://www.nature.com/articles/s41467-021-24448-3)
 
 
 
