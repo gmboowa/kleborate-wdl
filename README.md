@@ -4,7 +4,7 @@ This repository contains a WDL workflow for running Kleborate on a list of Klebs
 
 ## Overview
 
-Kleborate is a genomic profiling tool for *Klebsiella pneumoniae* and related species. This WDL implementation wraps the Kleborate command-line tool in a reproducible and portable format using Docker.
+Kleborate is a genomic profiling tool for *Klebsiella pneumoniae* & related species. This WDL implementation wraps the Kleborate command-line tool in a reproducible & portable format using Docker.
 
 The workflow:
 
@@ -14,9 +14,9 @@ The workflow:
 
 ## Files
 
-- `kleborate_wf.wdl` — Main WDL script containing the workflow and `run_kleborate` task.
+- `kleborate_wf.wdl` — Main WDL script containing the workflow & `run_kleborate` task.
 - `kleborate_local_input.json` — Example JSON input for running locally with Cromwell.
-- (Optional) Terra Data Table structure and documentation to support execution via Terra.
+- (Optional) Terra Data Table structure & documentation to support execution via Terra.
 
 ## Inputs
 
@@ -41,9 +41,9 @@ Example `kleborate_local_input.json`:
 ```json
 {
   "kleborate_wf.assemblies": [
-    "~/A55766_contigs.fasta",
-    "~/SRR28334394_contigs.fasta",
-    "~/A55727_contigs.fasta"
+    "~/A55766.fasta",
+    "~/SRR28334394.fasta",
+    "~/A55727.fasta"
   ],
   "kleborate_wf.samplenames": [
     "A55766",
