@@ -1,42 +1,61 @@
 version 1.0
 
-task KleborateTask {
+workflow kleborate_wf {
   input {
-    File fasta_file
-    String basename
+    Array[File] assemblies
+    Array[String] samplenames
+    String kleborate_docker_image
   }
 
-  command {
-    kleborate \
-      -a ${fasta_file} \
-      -o ./ \
-      --modules klebsiella_pneumo_complex__amr,klebsiella_pneumo_complex__mlst,klebsiella_pneumo_complex__kaptive,klebsiella_pneumo_complex__virulence_score
-  }
-
-  output {
-    File result = "${basename}.kleborate.tsv"
-  }
-
-  runtime {
-    docker: "myebenn/kleborate:3.2.1"
-    cpu: 1
-    memory: "2G"
+  scatter (i in range(length(assemblies))) {
+    call run_kleborate {
+      input:
+        assembly = assemblies[i],
+        samplename = samplenames[i],
+        kleborate_docker_image = kleborate_docker_image
+    }
   }
 }
 
-workflow run_kleborate {
+task run_kleborate {
   input {
-    File fasta_file
-    String basename
+    File assembly
+    String samplename
+    String kleborate_docker_image
   }
 
-  call KleborateTask {
-    input:
-      fasta_file = fasta_file,
-      basename = basename
+  command {
+    mkdir -p output_~{samplename}
+    kleborate \
+      -a ~{assembly} \
+      -o output_~{samplename} \
+      --modules enterobacterales__species,\
+general__contig_stats,\
+klebsiella__abst,\
+klebsiella__cbst,\
+klebsiella__rmpa2,\
+klebsiella__rmst,\
+klebsiella__smst,\
+klebsiella__ybst,\
+klebsiella_oxytoca_complex__mlst,\
+klebsiella_pneumo_complex__amr,\
+klebsiella_pneumo_complex__cipro_prediction,\
+klebsiella_pneumo_complex__kaptive,\
+klebsiella_pneumo_complex__mlst,\
+klebsiella_pneumo_complex__resistance_class_count,\
+klebsiella_pneumo_complex__resistance_gene_count,\
+klebsiella_pneumo_complex__resistance_score,\
+klebsiella_pneumo_complex__virulence_score,\
+klebsiella_pneumo_complex__wzi
   }
 
   output {
-    File kleborate_output = KleborateTask.result
+    Array[File] result_files = glob("output_~{samplename}/*")
+  }
+
+  runtime {
+    docker: kleborate_docker_image
+    memory: "4G"
+    cpu: 1
   }
 }
