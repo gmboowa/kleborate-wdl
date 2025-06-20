@@ -1,4 +1,4 @@
-# Kleborate WDL Workflow
+#Kleborate WDL Workflow for Local Cromwell
 
 This WDL workflow runs the Kleborate tool on genome assemblies for **Klebsiella pneumoniae** to perform:
 
