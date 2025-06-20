@@ -1,7 +1,5 @@
 #Kleborate WDL Workflow for Local Cromwell
 
-# Kleborate WDL Workflow
-
 This repository contains a WDL workflow for running Kleborate on a list of Klebsiella genome assemblies. The workflow supports both local execution using Cromwell and cloud execution in Terra, with optional data table integration on Terra.
 
 ## Overview
