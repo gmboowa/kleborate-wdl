@@ -84,13 +84,13 @@ java -jar ~/cromwell-88.jar run kleborate_wf.wdl --inputs kleborate_local_input.
 
 ```bash
 
-`bash kleborate_wf_wdl_batch.sh`
+bash kleborate_wf_wdl_batch.sh
 
 ```
 
 ```bash
 
-`bash kleborate_wf_wdl_batch_ecoli.sh`
+bash kleborate_wf_wdl_batch_ecoli.sh
 
 ```
 
