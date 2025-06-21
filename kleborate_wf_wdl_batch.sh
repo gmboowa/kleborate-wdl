@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Define base directory and Docker image
-BASE_DIR="~/test"
+BASE_DIR=./
 DOCKER_IMAGE="myebenn/kleborate:3.2.1"
 
 # Define input files
