@@ -102,8 +102,9 @@ bash kleborate_wf_wdl_batch_ecoli.sh
 | A55727      | Klebsiella quasipneumoniae subsp. similipneumoniae  | 24,320  | ST489        | 4                  | 4                | 1                | 0               |
 | SRR28334394 | Klebsiella pneumoniae                               | 229,347 | ST1927       | 6                  | 10               | 1                | 1               |
 | A55766      | Klebsiella pneumoniae                               | 39,092  | ST567-1LV    | 9                  | 17               | 1                | 0               |
-..........
 
+
+## Kleborate results summary (*Escherichia coli*)
 
 | Strain     | Species             | ST (allelic) | ST (MLST)    | N50     |
 |------------|------------------------------------|--------------|---------|
