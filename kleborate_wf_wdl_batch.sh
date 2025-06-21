@@ -2,11 +2,11 @@
 set -euo pipefail
 
 # Define base directory and Docker image
-BASE_DIR="/Users/gerald/test"
+BASE_DIR="~/test"
 DOCKER_IMAGE="myebenn/kleborate:3.2.1"
 
 # Define input files
-SAMPLES=("A55727_contigs.fasta" "SRR28334394_contigs.fasta" "A55766_contigs.fasta")
+SAMPLES=("A55727.fasta" "SRR28334394.fasta" "A55766.fasta")
 
 # Define Kleborate modules
 MODULES="enterobacterales__species,\
