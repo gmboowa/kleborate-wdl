@@ -79,6 +79,16 @@ java -jar ~/cromwell-88.jar run kleborate_wf.wdl --inputs kleborate_local_input.
 
 ```
 
+## Batch runs
+
+
+```bash
+
+bash kleborate_wf_wdl_batch.sh
+
+
+```
+
 ## Running in Terra
 
 1. Upload this WDL to the **Workflows** tab of your Terra workspace.
