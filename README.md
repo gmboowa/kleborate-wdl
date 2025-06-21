@@ -103,7 +103,6 @@ bash kleborate_wf_wdl_batch_ecoli.sh
 | SRR28334394_contigs  | Klebsiella pneumoniae                                    | 229,347 | NA   | ST1927       | 6                  | 10               | 1                | 1               |
 | A55766_contigs       | Klebsiella pneumoniae                                    | 39,092  | NA   | ST567-1LV     | 9                  | 17               | 1                | 0               |
 
-_All samples processed successfully._
 
 
 ## Running in Terra
