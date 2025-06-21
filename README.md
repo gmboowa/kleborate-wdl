@@ -103,14 +103,13 @@ bash kleborate_wf_wdl_batch_ecoli.sh
 | SRR28334394 | Klebsiella pneumoniae                               | 229,347 | ST1927       | 6                  | 10               | 1                | 1               |
 | A55766      | Klebsiella pneumoniae                               | 39,092  | ST567-1LV    | 9                  | 17               | 1                | 0               |
 
+## Kleborate Results Summary (*Escherichia coli*)
 
-## Kleborate results summary (*Escherichia coli*)
-
-| Strain     | Species             | ST (allelic) | ST (MLST)    | N50     |
-|------------|------------------------------------|--------------|---------|
-| 056EL61    | *Escherichia coli*  | ST93         | ST83         | 104,040 |
-| CHS36530   | *Escherichia coli*  | ST4981       | ST741        | 91,014  |
-| CHS36541   | *Escherichia coli*  | ST5229       | ST88         | 171,126 |
+| Strain    | Species             | ST (Allelic) | ST (MLST) | N50     |
+|-----------|---------------------|--------------|-----------|---------|
+| 056EL61   | *Escherichia coli*  | ST93         | ST83      | 104,040 |
+| CHS36530  | *Escherichia coli*  | ST4981       | ST741     | 91,014  |
+| CHS36541  | *Escherichia coli*  | ST5229       | ST88      | 171,126 |
 
 
 ## Running in Terra
