@@ -94,6 +94,18 @@ bash kleborate_wf_wdl_batch_ecoli.sh
 
 ```
 
+
+## Kleborate results summary
+
+| Strain               | Species                                                  | N50     | ST   | ST           | Resistance Classes | Resistance Genes | Resistance Score | Virulence Score |
+|----------------------|----------------------------------------------------------|---------|------|--------------|--------------------|------------------|------------------|-----------------|
+| A55727_contigs       | Klebsiella quasipneumoniae subsp. similipneumoniae      | 24,320  | NA   | ST489        | 4                  | 4                | 1                | 0               |
+| SRR28334394_contigs  | Klebsiella pneumoniae                                    | 229,347 | NA   | ST1927       | 6                  | 10               | 1                | 1               |
+| A55766_contigs       | Klebsiella pneumoniae                                    | 39,092  | NA   | ST567-1LV     | 9                  | 17               | 1                | 0               |
+
+_All samples processed successfully._
+
+
 ## Running in Terra
 
 1. Upload this WDL to the **Workflows** tab of your Terra workspace.
