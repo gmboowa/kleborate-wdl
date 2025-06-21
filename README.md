@@ -1,14 +1,14 @@
 # Kleborate WDL Workflow for Local Cromwell
 
-This repository contains a WDL workflow for running Kleborate on a list of Klebsiella genome assemblies. The workflow supports both local execution using Cromwell and cloud execution in Terra, with optional data table integration on Terra.
+This repository contains a WDL workflow for running Kleborate on a list of Klebsiella genome assemblies. The workflow supports both local execution using Cromwell & cloud execution in Terra, with optional data table integration on Terra.
 
 ## Overview
 
-Kleborate is a genomic profiling tool for *Klebsiella pneumoniae* & related species. This WDL implementation wraps the Kleborate command-line tool in a reproducible & portable format using Docker.
+Kleborate is a genomic profiling tool for *Klebsiella pneumoniae* & related species plus now also *E. coli* genomes. This WDL implementation wraps the Kleborate command-line tool in a reproducible & portable format using Docker.
 
 The workflow:
 
-- Accepts multiple `.fasta` assemblies and associated sample names.
+- Accepts multiple `.fasta` assemblies & associated sample names.
 - Runs Kleborate using a Docker container.
 - Outputs all module-specific result files into per-sample output folders.
 
@@ -22,7 +22,7 @@ The workflow:
 
 | Name                    | Type          | Description                                   |
 |-------------------------|---------------|-----------------------------------------------|
-| `assemblies`            | Array[File]   | List of genome assemblies (.fasta)            |
+| `assemblies`            | Array[File]   | List of bacterrial genome assemblies (.fasta) |
 | `samplenames`           | Array[String] | Matching list of sample IDs                   |
 | `kleborate_docker_image`| String        | Docker image for Kleborate                    |
 
@@ -36,7 +36,7 @@ java -jar ~/cromwell-88.jar run kleborate_wf.wdl --inputs kleborate_local_input.
 
 ```
 
-Example `kleborate_local_input.json`:
+Example `kleborate_local_input.json` with Klebsiella assemblies:
 
 ```json
 {
@@ -53,6 +53,27 @@ Example `kleborate_local_input.json`:
   ],
   "kleborate_wf.kleborate_docker_image": "myebenn/kleborate:3.2.1"
 }
+```
+## And now also *E. coli* genomes
+
+docker run -v ~/test:/input -it myebenn/kleborate:3.2.1 \
+  -a /input/Ecoli.fasta \
+  -o /input/output_Ecoli \
+  --modules enterobacterales__species,\
+escherichia__amr,\
+escherichia__ectyper,\
+escherichia__ezclermont,\
+escherichia__mlst_achtman,\
+escherichia__mlst_lee,\
+escherichia__mlst_pasteur,\
+escherichia__pathovar,\
+escherichia__stxtyper,\
+general__contig_stats
+
+```bash
+
+java -jar ~/cromwell-88.jar run kleborate_wf.wdl --inputs kleborate_local_input.json
+
 ```
 
 ## Running in Terra
@@ -84,6 +105,7 @@ These are available in the `result_files` array output from the task.
 The default Docker image used is:
 
 ```bash
+
 myebenn/kleborate:3.2.1
 
 ```
