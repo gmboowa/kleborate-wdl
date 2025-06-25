@@ -59,7 +59,7 @@ Example `kleborate_local_input.json` with Klebsiella assemblies:
 ```bash
 docker run -v ~/test:/input -it myebenn/kleborate:3.2.1 \
   -a /input/Ecoli.fasta \
-  -o /input/output_Ecoli \
+  -o ~/output_Ecoli \
   --modules enterobacterales__species,\
 escherichia__amr,\
 escherichia__ectyper,\
