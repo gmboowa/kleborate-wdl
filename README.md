@@ -140,7 +140,7 @@ Each sample will generate a folder named `output_<sample_id>/` containing Klebor
 
 These are available in the `result_files` array output from the task.
 
-Since your .txt files are stored in folders named like output_*, pull all your output_* files in one folder and run 'python summarize_kleborate_txt_from_output_folders.py' to:
+Since your .txt files are stored in folders named like output_* pull all your output_* files in one folder and run 'python summarize_kleborate_txt_from_output_folders.py' to:
 
 - Search only subdirectories matching output_*
 - Collect .txt files inside them (recursively)
