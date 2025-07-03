@@ -32,24 +32,24 @@ def summarize_txt_files(txt_paths):
             filtered_df["source_file"] = os.path.basename(path)
             all_data.append(filtered_df)
         except Exception as e:
-            print(f"⚠️ Skipping {path}: {e}")
+            print(f" Skipping {path}: {e}")
     return pd.concat(all_data, ignore_index=True) if all_data else pd.DataFrame()
 
 def main():
-    # ❗ Change this to the parent directory containing all `output_*` folders
+    # Change this to the parent directory containing all `output_*` folders
     base_dir = "./"
 
     output_file = "kleborate_summary.xlsx"
 
-    print(f"🔍 Searching for .txt files in folders like {base_dir}/output_*/ ...")
+    print(f" Searching for .txt files in folders like {base_dir}/output_*/ ...")
     txt_files = find_txt_files_from_output_folders(base_dir)
 
-    print(f"📂 Found {len(txt_files)} .txt files.")
+    print(f" Found {len(txt_files)} .txt files.")
     summary_df = summarize_txt_files(txt_files)
 
     if not summary_df.empty:
         summary_df.to_excel(output_file, index=False)
-        print(f"✅ Summary saved to {output_file}")
+        print(f" Summary saved to {output_file}")
     else:
         print("⚠️ No valid data found.")
 
